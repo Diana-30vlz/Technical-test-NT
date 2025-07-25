@@ -1,0 +1,25 @@
+Desafíos y Decisiones Técnicas en el Desarrollo del Proyecto 🚀
+Este documento detalla los principales desafíos técnicos enfrentados durante el desarrollo de este proyecto, así como las justificaciones detrás de la selección de las tecnologías clave empleadas.
+
+1. Desafíos Técnicos Enfrentados (Lecciones Aprendidas) 💡
+El proceso de desarrollo de este proyecto presentó diversas dificultades técnicas que requirieron un enfoque metódico para su resolución:
+
+Exploración y Gestión con Docker y Docker Compose: La familiarización con el entorno de contenedores Docker y la orquestación con Docker Compose representó un desafío inicial significativo. Comprender el ciclo de vida de los contenedores, la construcción de imágenes y la comunicación entre servicios fue fundamental. Errores como ERR_EMPTY_RESPONSE o Page not found (404) al iniciar el servidor fueron recurrentes, lo que enfatizó la importancia de la depuración a través de los logs de Docker para identificar y corregir las causas raíz de los fallos. Este proceso mejoró la comprensión de la infraestructura de contenedores.
+
+Importación de Datos CSV a la Base de Datos: La carga del archivo CSV a la base de datos presentó un obstáculo inesperado relacionado con la integridad de los datos. Específicamente, la columna amount contenía un valor atípico (3.0e213231213123) que excedía la capacidad de almacenamiento y procesamiento de los tipos de datos numéricos esperados por la base de datos y el ORM de Django. Tras varios intentos de manejo y al considerar la naturaleza anómala de dicho valor en comparación con el resto del conjunto de datos, se optó por excluir la fila que contenía este valor problemático del archivo CSV. Esta decisión pragmática permitió la continuación del proceso de importación y aseguró la consistencia de los datos válidos en la base de datos.
+
+2. Decisiones Técnicas Clave (Justificación de la Arquitectura) 🧠
+La selección de las tecnologías principales para este proyecto se basó en criterios de eficiencia, escalabilidad y robustez:
+
+Lenguaje de Programación: Python
+Python fue elegido por su legibilidad y sintaxis clara, lo que facilita el desarrollo rápido y el mantenimiento del código. Su vasta colección de librerías y su gran comunidad de soporte lo hacen ideal para tareas de procesamiento de datos y desarrollo de APIs, permitiendo implementar funcionalidades complejas de manera eficiente.
+
+Framework Web: Django
+Django, un framework web de alto nivel. Esto significa que proporciona una amplia gama de componentes preconstruidos (como un ORM para la base de datos, un panel de administración automático, y herramientas de seguridad) que aceleran significativamente el ciclo de desarrollo. Su diseño robusto y su capacidad de escalabilidad lo hacen adecuado para construir aplicaciones web complejas y APIs RESTful de manera organizada y segura.
+
+Base de Datos: PostgreSQL
+PostgreSQL se eligió como sistema de gestión de bases de datos relacionales por su fiabilidad, rendimiento y cumplimiento de estándares SQL. Es una solución de código abierto que ofrece características avanzadas para la integridad de los datos, la concurrencia y la escalabilidad. Su robustez es fundamental para el almacenamiento y la recuperación eficiente de datos estructurados, como los registros de cargos y compañías, y para la ejecución de consultas analíticas complejas.
+
+En síntesis, la combinación de Python, Django y PostgreSQL establece una arquitectura sólida y eficiente, optimizada para el desarrollo ágil de aplicaciones web y APIs con capacidades de procesamiento de datos y gestión de bases de datos confiables.
+
+Espero que esta versión, más formal pero aún clara, sea exactamente lo que necesitas.
