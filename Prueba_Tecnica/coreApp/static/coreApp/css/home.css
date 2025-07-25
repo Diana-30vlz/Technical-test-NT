@@ -1,0 +1,36 @@
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .container {
+            max-width: 960px;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 0.5rem;
+            overflow: hidden; 
+        }
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb; 
+        }
+        th {
+            background-color: #1f2937;
+            color: #f9fafb; 
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff; 
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
